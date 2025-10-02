@@ -44,7 +44,7 @@ const NumberPadInput: React.FC<NumberPadInputProps> = ({ onSubmit, disabled, isC
     };
 
     const getDisplayClasses = () => {
-        let baseClasses = 'w-full text-center text-5xl font-bold p-4 rounded-xl shadow-inner border-4 transition-all duration-300 h-[84px] flex items-center justify-center';
+        let baseClasses = 'w-full text-center text-4xl font-bold p-4 rounded-xl shadow-inner border-4 transition-all duration-300 h-[72px] flex items-center justify-center';
         
         if (isCorrect) {
             return `${baseClasses} bg-green-500 text-white border-green-700`;
@@ -58,7 +58,7 @@ const NumberPadInput: React.FC<NumberPadInputProps> = ({ onSubmit, disabled, isC
     const numberButtons = [7, 8, 9, 4, 5, 6, 1, 2, 3];
 
     return (
-        <form onSubmit={handleSubmit} className="mt-8 w-full max-w-xs flex flex-col items-center gap-4">
+        <form onSubmit={handleSubmit} className="mt-8 w-full max-w-xs flex flex-col items-center gap-2">
             {/* Display */}
             <div className={getDisplayClasses()}>
                 <span className="truncate">{value || '?'}</span>
@@ -72,7 +72,7 @@ const NumberPadInput: React.FC<NumberPadInputProps> = ({ onSubmit, disabled, isC
                         key={num}
                         onClick={() => handleNumberClick(num)}
                         disabled={disabled}
-                        className="py-4 text-3xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white text-indigo-600 border-b-8 border-gray-300 hover:bg-gray-100 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:bg-gray-400/80 disabled:border-gray-500/80 disabled:text-gray-600 disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="py-3 text-2xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white text-indigo-600 border-b-8 border-gray-300 hover:bg-gray-100 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:bg-gray-400/80 disabled:border-gray-500/80 disabled:text-gray-600 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                         {num}
                     </button>
@@ -81,7 +81,7 @@ const NumberPadInput: React.FC<NumberPadInputProps> = ({ onSubmit, disabled, isC
                     type="button"
                     onClick={handleClear}
                     disabled={disabled || value === ''}
-                    className="py-4 text-3xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white/50 text-white border-b-8 border-gray-400/50 hover:bg-white/70 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="py-3 text-2xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white/50 text-white border-b-8 border-gray-400/50 hover:bg-white/70 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                  >
                     C
                  </button>
@@ -89,7 +89,7 @@ const NumberPadInput: React.FC<NumberPadInputProps> = ({ onSubmit, disabled, isC
                     type="button"
                     onClick={() => handleNumberClick(0)}
                     disabled={disabled}
-                    className="py-4 text-3xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white text-indigo-600 border-b-8 border-gray-300 hover:bg-gray-100 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:bg-gray-400/80 disabled:border-gray-500/80 disabled:text-gray-600 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="py-3 text-2xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white text-indigo-600 border-b-8 border-gray-300 hover:bg-gray-100 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:bg-gray-400/80 disabled:border-gray-500/80 disabled:text-gray-600 disabled:opacity-70 disabled:cursor-not-allowed"
                  >
                     0
                  </button>
@@ -97,7 +97,7 @@ const NumberPadInput: React.FC<NumberPadInputProps> = ({ onSubmit, disabled, isC
                     type="button"
                     onClick={handleBackspace}
                     disabled={disabled || value === ''}
-                    className="py-4 text-3xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white/50 text-white border-b-8 border-gray-400/50 hover:bg-white/70 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="py-3 text-2xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out bg-white/50 text-white border-b-8 border-gray-400/50 hover:bg-white/70 active:bg-gray-200 active:border-b-4 active:translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed"
                  >
                     ⌫
                  </button>
@@ -107,7 +107,7 @@ const NumberPadInput: React.FC<NumberPadInputProps> = ({ onSubmit, disabled, isC
             <button
                 type="submit"
                 disabled={disabled || value === ''}
-                className="w-full mt-2 px-8 py-4 bg-yellow-400 text-slate-800 font-bold text-2xl rounded-xl shadow-lg border-b-8 border-yellow-600 hover:bg-yellow-300 active:bg-yellow-500 active:border-b-4 active:translate-y-1 transform transition-all duration-150 ease-in-out hover:scale-105 disabled:bg-gray-400 disabled:border-gray-500 disabled:cursor-not-allowed disabled:scale-100"
+                className="w-full mt-2 px-8 py-3 bg-yellow-400 text-slate-800 font-bold text-xl rounded-xl shadow-lg border-b-8 border-yellow-600 hover:bg-yellow-300 active:bg-yellow-500 active:border-b-4 active:translate-y-1 transform transition-all duration-150 ease-in-out hover:scale-105 disabled:bg-gray-400 disabled:border-gray-500 disabled:cursor-not-allowed disabled:scale-100"
             >
                 Controleer
             </button>
