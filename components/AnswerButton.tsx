@@ -10,7 +10,7 @@ interface AnswerButtonProps {
 
 const AnswerButton: React.FC<AnswerButtonProps> = ({ answer, onClick, disabled, isCorrect, isIncorrect }) => {
   const getButtonClasses = () => {
-    let baseClasses = "w-full py-4 text-3xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out ";
+    let baseClasses = "w-full py-3 text-2xl font-bold rounded-xl shadow-lg transform transition-all duration-150 ease-in-out ";
     let colorClasses = "bg-white text-indigo-600 border-b-8 border-gray-300 hover:bg-gray-100 active:bg-gray-200 active:border-b-4 active:translate-y-1";
 
     if (disabled) {

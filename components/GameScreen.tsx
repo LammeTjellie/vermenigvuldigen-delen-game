@@ -43,18 +43,18 @@ const GameScreen: React.FC<GameScreenProps> = ({ question, onAnswer, score, ques
   
   return (
     <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
-      <div className="w-full flex justify-between items-center mb-6 px-4">
-        <div className="bg-black/20 px-4 py-2 rounded-lg shadow-md">
-          <span className="font-bold text-xl">Score: {score}</span>
+      <div className="w-full flex justify-between items-center mb-4 px-2">
+        <div className="bg-black/20 px-3 py-1 rounded-lg shadow-md">
+          <span className="font-bold text-lg">Score: {score}</span>
         </div>
-        <div className="bg-black/20 px-4 py-2 rounded-lg shadow-md">
+        <div className="bg-black/20 px-3 py-1 rounded-lg shadow-md">
           {isReviewing ? (
             <div className="text-center">
-              <div className="font-bold text-yellow-300 text-lg">Bonusronde!</div>
-              <div className="font-bold text-xl">Nog te gaan: {reviewCount}</div>
+              <div className="font-bold text-yellow-300 text-base">Bonusronde!</div>
+              <div className="font-bold text-lg">Nog te gaan: {reviewCount}</div>
             </div>
           ) : (
-            <div className="font-bold text-xl">Vraag: {questionNumber > totalQuestions ? totalQuestions : questionNumber} / {totalQuestions}</div>
+            <div className="font-bold text-lg">Vraag: {questionNumber > totalQuestions ? totalQuestions : questionNumber} / {totalQuestions}</div>
           )}
         </div>
       </div>
@@ -63,27 +63,29 @@ const GameScreen: React.FC<GameScreenProps> = ({ question, onAnswer, score, ques
         <QuestionCard key={key} num1={question.num1} num2={question.num2} operator={question.operator} />
       </div>
 
-      {difficulty === Difficulty.Easy ? (
-        <div className="grid grid-cols-2 gap-4 mt-8 w-full max-w-md">
-          {question.options.map((option, index) => (
-            <AnswerButton
-              key={index}
-              answer={option}
-              onClick={() => handleSelectAnswer(option)}
-              disabled={isAnswered}
-              isCorrect={isAnswered && option === question.correctAnswer}
-              isIncorrect={isAnswered && option !== question.correctAnswer}
-            />
-          ))}
-        </div>
-      ) : (
-        <NumberPadInput 
-          onSubmit={handleSelectAnswer}
-          disabled={isAnswered}
-          isCorrect={feedback === 'correct'}
-          isIncorrect={feedback === 'incorrect'}
-        />
-      )}
+      <div className="mt-4 w-full flex justify-center">
+        {difficulty === Difficulty.Easy ? (
+          <div className="grid grid-cols-2 gap-2 w-full max-w-md">
+            {question.options.map((option, index) => (
+              <AnswerButton
+                key={index}
+                answer={option}
+                onClick={() => handleSelectAnswer(option)}
+                disabled={isAnswered}
+                isCorrect={isAnswered && option === question.correctAnswer}
+                isIncorrect={isAnswered && option !== question.correctAnswer}
+              />
+            ))}
+          </div>
+        ) : (
+          <NumberPadInput 
+            onSubmit={handleSelectAnswer}
+            disabled={isAnswered}
+            isCorrect={feedback === 'correct'}
+            isIncorrect={feedback === 'incorrect'}
+          />
+        )}
+      </div>
       
     </div>
   );

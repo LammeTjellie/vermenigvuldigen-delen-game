@@ -122,7 +122,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <main className="bg-gradient-to-br from-sky-400 to-indigo-600 min-h-screen w-full flex flex-col items-center justify-center p-4 text-white overflow-hidden" style={{ perspective: '1200px' }}>
+    <main className="bg-gradient-to-br from-sky-400 to-indigo-600 h-screen w-full flex flex-col items-center justify-center p-2 text-white overflow-hidden" style={{ perspective: '1200px' }}>
       {renderContent()}
     </main>
   );
